@@ -37,8 +37,8 @@ int main(int argc, char *argv[])
     fwrite(header_input , sizeof(uint8_t) , HEADER_SIZE , output);
 
     // Read samples from input file and write updated data to output file
-    fseek(input , HEADER_SIZE , SEEK_CUR);
-    fseek(output , HEADER_SIZE , SEEK_CUR );
+    fseek(input , HEADER_SIZE , SEEK_SET);
+    fseek(output , HEADER_SIZE , SEEK_SET );
 
     while (!feof(input)){
         int16_t sample;
